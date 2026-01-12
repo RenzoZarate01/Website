@@ -900,6 +900,31 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const faqItems = document.querySelectorAll("#faq .faq-item");
+
+    faqItems.forEach((item) => {
+      const header = item.querySelector("h3");
+      const toggle = item.querySelector(".faq-toggle");
+
+      const handleClick = (e) => {
+        e.preventDefault();
+
+        // (Opcional) cerrar los demás para que solo uno quede abierto
+        faqItems.forEach((other) => {
+          if (other !== item) other.classList.remove("faq-active");
+        });
+
+        item.classList.toggle("faq-active");
+      };
+
+      if (header) header.addEventListener("click", handleClick);
+      if (toggle) toggle.addEventListener("click", handleClick);
+    });
+  });
+</script>
+  
 </body>
 
 </html>
