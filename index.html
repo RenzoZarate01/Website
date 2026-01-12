@@ -36,10 +36,19 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 <style>
-  .testimonials .swiper-button-next,
-  .testimonials .swiper-button-prev {
-    color: #fff;
-  }
+.testimonials .swiper-button-next,
+.testimonials .swiper-button-prev {
+  color: #fff;
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+/* para que el fondo NO se coma los clicks */
+.testimonials .testimonials-bg {
+  pointer-events: none;
+}
+
+  
 </style>
 
 </head>
